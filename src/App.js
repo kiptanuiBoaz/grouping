@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 
 function App() {
+
+
+  const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+  let noMembers;
+  const chunkSize = data.length/noMembers;
+  
+  const Randomize = ()=>{
+    const outputArray = [];
+    const randomInt = Math.floor(Math.random() * data.length);
+
+    let i;
+    let a;
+    for(a=0; a<noMembers; a++){
+      console.log(chunkSize);
+      for(i = 0; i < chunkSize; i++){
+        outputArray.push(randomInt);
+      }
+    }
+   
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+    
+        <h1>Please input your required number per group:</h1>
+
+        <label value={noMembers} >Number per group</label>
+
+        <input type="number" name="numberPerGroup"  required/>
+
+
+        <button onClick={Randomize }>Randomize</button>
+        
+        <div>
+
+        </div>
     </div>
+    
   );
 }
 
